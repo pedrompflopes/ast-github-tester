@@ -15,7 +15,8 @@ jobs:
       - name: Checkmarx AST CLI Action
         uses: checkmarxDev/ast-github-action@master #Github Action version
         with:
-          project_name: Test
+          project_name: Test multiple project types
           base_uri: https://master.cxast.com
           client_id: ${{ secrets.CLIENT_ID }}
+          project_type: sast,kicks,sca
           secret: ${{ secrets.SECRET }}
