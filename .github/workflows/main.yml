@@ -17,6 +17,6 @@ jobs:
         with:
           project_name: Test multiple project types
           base_uri: https://master.cxast.com
-          project_type: sca,sast,kics
+          scan_types: sca,sast,kics
           client_id: ${{ secrets.CLIENT_ID }}
           secret: ${{ secrets.SECRET }}
