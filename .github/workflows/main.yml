@@ -19,5 +19,5 @@ jobs:
           base_uri: https://master.cxast.com
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
-          additional_params: --preset-name 'Checkmarx Default Pedro'
+          additional_params: --sast=-reset-name "Chekmarx Default Pedro"
           scan_types: sast
