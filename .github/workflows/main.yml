@@ -17,6 +17,7 @@ jobs:
         with:
           project_name: Test 1
           base_uri: https://ast-master.dev.cxast.net/
+          cx_tenant: organization
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
           scan_types: sast
