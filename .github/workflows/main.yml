@@ -16,7 +16,7 @@ jobs:
         uses: checkmarxDev/ast-github-action@master #Github Action version
         with:
           project_name: Test 1
-          base_uri: https://ast-master.dev.cxast.net/
+          base_uri: https://ast-intgrs.dev.cxast.net/
           cx_tenant: organization
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
