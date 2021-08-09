@@ -17,7 +17,7 @@ jobs:
         with:
           project_name: Test 1
           base_uri: https://ast-intgrs.dev.cxast.net/
-          cx_tenant: organization
+          cx_tenant: galactica
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
           additional_params: --tags test1,test2
