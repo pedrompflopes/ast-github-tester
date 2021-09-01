@@ -20,4 +20,10 @@ jobs:
           cx_tenant: galactica
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
-          additional_params: --tags test1,test2 --file-filter !readme
+          additional_params: --tags test1,test2 --file-filter !readme --report-format sarif --output-name results
+          
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          # Path to SARIF file relative to the root of the repository
+          sarif_file: results.sarif
