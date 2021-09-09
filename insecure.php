@@ -8,7 +8,7 @@
 /// XSS example
 //
 $var = $_POST['var'];
-echo "<div>$var</div>\n";
+//echo "<div>$var</div>\n";
 
 
 //
