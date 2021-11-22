@@ -33,17 +33,3 @@ Scan:
     shared: false
     required: false
   artifact-subscriptions: []
-repositories:
-- test:
-    scope: project
-triggers:
-- polling:
-    period: '180'
-branches:
-  create: manually
-  delete: never
-  link-to-jira: true
-notifications: []
-labels: []
-other:
-  concurrent-build-plugin: system-default
