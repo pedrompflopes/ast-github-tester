@@ -33,7 +33,7 @@ Scan:
     shared: false
     required: false
   artifact-subscriptions: []
-  repositories:
+repositories:
 - test:
     scope: project
 triggers:
