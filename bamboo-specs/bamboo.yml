@@ -1,6 +1,6 @@
 version: 2
 plan:
-  project-key: MYPROJECTCX
+  project-key: TESTER
   key: MPCX
   name: Checkmarx Scan
 stages:
