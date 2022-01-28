@@ -20,13 +20,13 @@ jobs:
           rm -rf ScaResolver-linux64.tar.gz
           
       - name: Run SCA Resolver in offline mode
-        run: ./ScaResolver offline -s ./ ast-cli -r .cxsca-results.json --scan-containers
+        run: ./ScaResolver offline -s . -r .cxsca-results.json --scan-containers
       
       - name: Checkmarx AST CLI Action
         uses: checkmarxDev/ast-github-action@master
         with:
           project_name: ast-cli
-          base_uri: ${{ secrets.CX_BASE_URI }}
-          cx_tenant: ${{ secrets.CX_TENANT }}
+          base_uri: https://eu.ast.checkmarx.net/
+          cx_tenant: your_tenant
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }} 
