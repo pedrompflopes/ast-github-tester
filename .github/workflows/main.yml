@@ -1,9 +1,6 @@
 name: SCA Resolver Example
 
 on:
-  push:
-    branches:
-      [main]
   workflow_dispatch:
 
 jobs:
@@ -15,18 +12,19 @@ jobs:
 
       - name: Download SCA Resolver
         run: |
-          wget https://sca-downloads.s3.amazonaws.com/cli/latest/ScaResolver-linux64.tar.gz
+          wget https://plugins-bucket.s3.us-east-1.amazonaws.com/ScaResolver-linux64.tar.gz?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMyJHMEUCIEmU4etUa7kDioDe7MUOdANjQBe1ApV1LtBuWM7v2y9%2BAiEA3S1PtnIliS3qkvUX%2FINBEfyVQR26J1Z2CYKVzvZI%2Fd0q%2FgMI2f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw4MjIxMTIyODM2MDAiDFosML%2BkHnvp2rJ%2FcyrSAy%2BBGI0ZL8%2Bt5duGOrOLQyARcsUYgTUEes%2FGAyPt8JcqQddvncPOEBKcJkdYsuoGgW74mbS70FJww%2BiYYWCTmgmQ%2F1X8DkuGdClXuvnxQZpBtjd1ksQOzIIkhlGe8uGkISaCSNawOvPd0Nq9wdz4qWYGvUD0U8Cg3RU5%2FAcKC1AZnzdrZptVrhtZ70bUPJO91cjaQOHwRgwaKDeCgP6PO3QYJQs3FqhxpFYFlJi1ooCk9xPOB%2FDo0wZM058zo8XVKuyBekxtD3rCUs5HiWq%2Bo66KZ4K3eAbop3khYI7JAO4ksS41wcVScM2ha6rRz439pcuewjkEOFUVL0cVpbX6CNf0vcE%2FxrWX4ZfUno08yD5ko1CxOv8WoFODzjVwxAsTQEVIuctdH7OIxWF9J5IofkTQmeUQgH3CXEuwjKnGvtdq4fPMwmxdRb9djAfNdBKUsLDTpwyo9LQZztgUEkkFmV2%2BXJjqXh3ijPok1Kainx5gx2elPNsh%2BI499O4QaC1%2Bv2%2BL%2FnuGTxrCrIukT%2Fvk6Y4CYn2oMthIBWgpIwIZwBwYFUgHcCggMPHzSRs36NL7lVhnIytuwfbxXJwMV2WrJ%2FGodEaPYEdcwAKkFl9XbhojbY4wiqvQjwY6lAKNUN0W9dzlcwfEVN2F2%2FQuOIgmmI9m5nWvl9iZl5d6Hm799M9Wyz7QJrThcg0WXxJtI5s0NfbR%2FSsB7%2Baz7wiOnsYjq%2FPa7n7LItXMocDBH2VL6vitA4RTzckKxEYh6R4P2c4V%2B2ZOVpl3jtxDQObCBJAzYR%2BYiFklSOINUzN3qlHOPuRgqtMyHhB5tdSUCilRLqaD34KZNP3Wgr9ukfl2enB4ZDIR8aAzmaaoogI3xkezOWj74LNnZS07ug1wGLltTPV36ft6g58iy6%2FmMfHNsLrWdKImnZgyDIl9iE0cW2gFobZvorz00S0d092eIdqG5uWomYBNR4V3t7%2FJRJSvXw5OlcGGvjFGtP3g%2FzIx64rGLM8%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20220128T161711Z&X-Amz-SignedHeaders=host&X-Amz-Expires=604800&X-Amz-Credential=ASIA362NV5PIGB5HSOMZ%2F20220128%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=14715d55e7bf5afd2b2b9983abf5088d580447fa87dfae5ca47d34b1bdbf6863
           tar -xzvf ScaResolver-linux64.tar.gz
           rm -rf ScaResolver-linux64.tar.gz
           
       - name: Run SCA Resolver in offline mode
-        run: ./ScaResolver offline -s . -r .cxsca-results.json --scan-containers
+        run: |
+          ./ScaResolver offline -s . -r .cxsca-results.json --scan-containers
+          rm -rf ./ScaResolver
       
       - name: Checkmarx AST CLI Action
-        uses: checkmarxDev/ast-github-action@master
+        uses: checkmarx/ast-github-action@main
         with:
-          project_name: ast-cli
-          base_uri: https://eu.ast.checkmarx.net/
-          cx_tenant: your_tenant
+          base_uri: https://ast-master.dev.cxast.net/
+          cx_tenant: galactica
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }} 
