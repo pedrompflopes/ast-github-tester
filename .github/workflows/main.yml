@@ -28,4 +28,5 @@ jobs:
           cx_tenant: galactica
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }} 
-          additional_params: --debug
+          additional_params: >-
+            --tags product_id:123456789-123456-789654123
