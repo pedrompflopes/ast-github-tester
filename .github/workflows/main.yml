@@ -18,7 +18,7 @@ jobs:
           
       - name: Run SCA Resolver in offline mode
         run: |
-          ./ScaResolver offline -s . -r .cxsca-results.json --scan-containers
+          ./ScaResolver offline -s . -r .cxsca-results.json
           rm -rf ./ScaResolver
       
       - name: Checkmarx AST CLI Action
@@ -28,3 +28,4 @@ jobs:
           cx_tenant: galactica
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }} 
+          additional_params: --debug
