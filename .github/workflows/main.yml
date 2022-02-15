@@ -1,7 +1,7 @@
-name: SCA Resolver Example
+name: Tester
 
-on:
-  workflow_dispatch:
+on: [pull_request,workflow_dispatch]
+
 
 jobs:
   build:
@@ -14,7 +14,6 @@ jobs:
         uses: checkmarx/ast-github-action@main
         with:
           base_uri: https://ast-master.dev.cxast.net/
-          project_name: ''
           cx_tenant: galactica
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }} 
