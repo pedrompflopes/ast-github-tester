@@ -20,6 +20,6 @@ jobs:
           additional_params: >-
                 --threshold sast-high=1
                 --tags product_id:123456789-123456-789654123
-                --sast-preset-name "High and Medium"
+                --sast-preset-name "failed preset"
                 --sast-incremental
 
