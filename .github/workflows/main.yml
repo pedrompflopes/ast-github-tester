@@ -11,10 +11,10 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Checkmarx AST CLI Action
-        uses: checkmarx/ast-github-action@feature/handle_cancel_scan 
+        uses: checkmarx/ast-github-action@main
         with:
-          base_uri: https://ast-master.dev.cxast.net/
-          cx_tenant: galactica
+          base_uri: ${{ secrets.BASE_URL }}
+          cx_tenant: research_tenant
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
 
