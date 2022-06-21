@@ -1,18 +1,15 @@
 name: Notify
 
 on:
-push:
-    branches: [ branch_name ]
-pull_request:
-    branches: [ branch_name ]
+  workflow_dispatch:
+ 
 jobs:
-
-notify:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Send a Notification
-        id: notify
-        uses: thechetantalwar/teams-notify@v2
-        with:
-          teams_webhook_url: ${{ secrets.TEAM_HOOK }}
-          message: "Github Action Build Number \n logs \n ### TEST "
+    notify:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Send a Notification
+            id: notify
+            uses: thechetantalwar/teams-notify@v2
+            with:
+              teams_webhook_url: ${{ secrets.TEAM_HOOK }}
+              message: "Github Action Build Number \n logs \n ### TEST "
