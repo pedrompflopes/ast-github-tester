@@ -11,5 +11,4 @@ jobs:
       - uses: actions/checkout@v2      
       - name: Adding markdown
         run: | 
-          md=$(cat ./file.md)
-          echo md >> $GITHUB_STEP_SUMMARY
+          echo $(cat ./file.md) >> $GITHUB_STEP_SUMMARY
