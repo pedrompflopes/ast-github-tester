@@ -1,6 +1,6 @@
 name: Checkmarx Scan
 
-on: [push,pull_request,workflow_dispatch]
+on: [pull_request,workflow_dispatch]
 
 
 jobs:
@@ -17,5 +17,5 @@ jobs:
           cx_tenant: ${{ secrets.TENANT }}
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
-          additional_params: --scan-types "SAST, KICS"
+          additional_params: --scan-types "SAST, KICS" --debug
 
