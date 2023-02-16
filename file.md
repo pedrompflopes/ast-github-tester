@@ -19,7 +19,7 @@
 | SAST | IaC Security | SCA |
 |:----------:|:----------:|:---------:|
 | N/A | 0 | N/A |
-***
+
 
 ### API Security 
 
