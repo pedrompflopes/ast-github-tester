@@ -17,4 +17,10 @@ jobs:
           cx_tenant: ${{ secrets.TENANT }}
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
+          additional_params: --report-format pdf
+      - name: Cx report
+        uses: actions/upload-artifact@v3
+        with:
+          name: cx_result.pdf
+          path: cx_result.pdf
 
