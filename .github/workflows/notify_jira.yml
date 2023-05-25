@@ -55,8 +55,8 @@ jobs:
         with:
           script: |
             github.issues.createComment({
-              issue_number: ${{inputs.issue_number}},
-              owner: ${{inputs.owner}},
-              repo: ${{inputs.repo}},
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
               body: 'Internal Jira issue: [${{ steps.create_jira_issue.outputs.issue }}](${{ env.JIRA_URL }}/browse/${{ steps.create_jira_issue.outputs.issue }})'
             })
