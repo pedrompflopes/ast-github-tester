@@ -11,7 +11,7 @@ jobs:
       title: ${{ github.event.issue.title }}
       body: ${{ github.event.issue.body }}
       html_url: ${{ github.event.issue.html_url }}
-      owner: ${{ github.event.repository.owner.login }}
+      owner: ${{ github.event.repository.owner.id }}
       issue_number: ${{ github.event.issue.number }}
       repo: ${{ github.event.repository.full_name }}
     secrets: inherit 
