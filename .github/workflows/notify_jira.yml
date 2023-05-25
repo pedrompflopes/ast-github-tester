@@ -1,7 +1,7 @@
 name: Notify Jira
 
 on:
-  workflow_dispatch:
+  workflow_call:
     inputs:
       title:
         description: 'Issue title'
