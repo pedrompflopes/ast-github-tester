@@ -11,9 +11,9 @@ jobs:
       title: ${{github.event.issue.title}}
       body: ${{github.event.issue.body}}
       html_url: ${{github.event.issue.html_url}}
-      owner: ${{github.repo.owner}}
-      issue_number: ${{github.issue.number}}
-      repo: ${{github.repo.repo}}
+      owner: ${{{github.event.repository_owner}}
+      issue_number: ${{github.event.issue.number}}
+      repo: ${{{github.event.repository.full_name}}
     secrets: inherit 
 
 # This workflow is triggered by github issue and creates a jira ticket in the respective configured account
