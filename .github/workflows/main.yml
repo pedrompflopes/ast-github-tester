@@ -17,7 +17,7 @@ jobs:
         with:
           base_uri: https://deu.ast.checkmarx.net/
           cx_tenant: ${{ secrets.TENANT }}
-          additional_params: --report-format pdf --debug --async
+          additional_params: --debug --async
       - name: Cx report
         uses: actions/upload-artifact@v3
         with:
