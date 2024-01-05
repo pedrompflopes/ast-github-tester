@@ -13,7 +13,7 @@
 |:----------:|:------------:|:---------:|:----------:|
 | 0 | 0 | 0 | 0 |
 ***
-
+a
 ### Vulnerabilities per Scan Type
 
 | SAST | IaC Security | SCA |
