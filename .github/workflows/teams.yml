@@ -1,15 +1,15 @@
-name: Notify
+# name: Notify
 
-on:
-  workflow_dispatch:
+# on:
+#   workflow_dispatch:
  
-jobs:
-    notify:
-        runs-on: ubuntu-latest
-        steps:
-          - name: Send a Notification
-            id: notify
-            uses: thechetantalwar/teams-notify@v2
-            with:
-              teams_webhook_url: ${{ secrets.TEAM_HOOK }}
-              message: "Github Action Build Number logs  sdfsd ### TEST "
+# jobs:
+#     notify:
+#         runs-on: ubuntu-latest
+#         steps:
+#           - name: Send a Notification
+#             id: notify
+#             uses: thechetantalwar/teams-notify@v2
+#             with:
+#               teams_webhook_url: ${{ secrets.TEAM_HOOK }}
+#               message: "Github Action Build Number logs  sdfsd ### TEST "
