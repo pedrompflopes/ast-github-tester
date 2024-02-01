@@ -17,5 +17,5 @@ jobs:
         with:
           base_uri: https://deu.ast.checkmarx.net/
           cx_tenant: ${{ secrets.TENANT }}
-          additional_params: --debug
+          additional_params: --sast-incremental --debug
 
